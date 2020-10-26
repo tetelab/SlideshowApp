@@ -71,14 +71,13 @@ class ViewController: UIViewController {
         btnMoveOn.isEnabled = true
     }
 
-    @IBAction func returnBtn(_ sender: Any) {
-        returnImage()
-    }
-    
     @IBAction func moveOnBtn(_ sender: Any) {
         changeImage()
     }
     
+    @IBAction func returnBtn(_ sender: Any) {
+        returnImage()
+    }
     
     @objc func changeImage() {
         // indexを増やして表示する画像を切り替える
@@ -107,6 +106,7 @@ class ViewController: UIViewController {
         display()
        }
     
+    //表示する関数
     func display(){
         // indexの画像をstoryboardの画像にセットする
         imageView.image = imageArray[nowIndex]
