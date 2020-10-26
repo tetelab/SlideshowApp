@@ -50,19 +50,25 @@ class ViewController: UIViewController {
 
         } else {
             // 停止時の処理を実装
-            // タイマーを停止する
-            timer.invalidate()
-
-            // タイマーを削除(timer.invalidateだけだとtimerがnilにならないため)
-            timer = nil
-
-            // ボタンの名前を再生に直しておく
-            btnStartStop.setTitle("再生", for: .normal)
-            
-            //戻る、進むボタンを選択できるように
-            btnReturn.isEnabled = true
-            btnMoveOn.isEnabled = true
+            StopTimer()
         }
+        
+    }
+    
+    func StopTimer(){
+        // 停止時の処理を実装
+        // タイマーを停止する
+        timer.invalidate()
+
+        // タイマーを削除(timer.invalidateだけだとtimerがnilにならないため)
+        timer = nil
+
+        // ボタンの名前を再生に直しておく
+        btnStartStop.setTitle("再生", for: .normal)
+        
+        //戻る、進むボタンを選択できるように
+        btnReturn.isEnabled = true
+        btnMoveOn.isEnabled = true
     }
 
     @IBAction func returnBtn(_ sender: Any) {
@@ -83,8 +89,8 @@ class ViewController: UIViewController {
             // indexを一番最初の数字に戻す
             nowIndex = 0
         }
-        // indexの画像をstoryboardの画像にセットする
-        imageView.image = imageArray[nowIndex]
+        //画像を表示
+        display()
     }
     
     @objc func returnImage() {
@@ -92,12 +98,36 @@ class ViewController: UIViewController {
            nowIndex -= 1
 
            // indexがマイナスになってしまう場合
-           if (nowIndex <= 0) {
+           if (nowIndex < 0) {
                // indexを一番最後の数字に戻す
                nowIndex = imageArray.count
+               nowIndex -= 1
            }
-           // indexの画像をstoryboardの画像にセットする
-           imageView.image = imageArray[nowIndex - 1]
+        //画像を表示
+        display()
        }
+    
+    func display(){
+        // indexの画像をstoryboardの画像にセットする
+        imageView.image = imageArray[nowIndex]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (timer != nil) {
+            //タイマーを停止
+            StopTimer()
+        }
+        
+        // segueから遷移先のViewControllerを取得する
+        let ExpansionViewController:ExpansionViewController = segue.destination as! ExpansionViewController
+
+        // 遷移先のViewControllerで宣言しているimageNumberに値を代入して渡す
+        ExpansionViewController.imageNumber = imageArray[nowIndex]
+
+    }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
 }
 

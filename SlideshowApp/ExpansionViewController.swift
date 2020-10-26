@@ -9,14 +9,16 @@
 import UIKit
 
 class ExpansionViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var imageView: UIImageView!
+    var imageNumber = UIImage(named: "Ham1")!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageView.image = imageNumber
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
     
 
