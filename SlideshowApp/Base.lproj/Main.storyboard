@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="h3n-qz-0mN">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="h3n-qz-0mN">
                                 <rect key="frame" x="81" y="328" width="213" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTo-3R-WcR" userLabel="btnReturn">
@@ -42,14 +42,13 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-x4-PEV">
-                                <rect key="frame" x="87" y="100" width="201" height="128"/>
+                                <rect key="frame" x="50" y="100" width="275" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="ssq-7c-8Tg"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLb-Hj-fbm">
-                                <rect key="frame" x="87" y="144" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLb-Hj-fbm">
+                                <rect key="frame" x="50" y="100" width="275" height="30"/>
                                 <connections>
                                     <segue destination="Ndy-QZ-30O" kind="show" id="oQN-va-Edq"/>
                                 </connections>
@@ -57,11 +56,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qJC-x4-PEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3wd-qO-fkG"/>
-                            <constraint firstItem="qJC-x4-PEV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Qgg-Aq-tV1"/>
-                            <constraint firstItem="h3n-qz-0mN" firstAttribute="top" secondItem="qJC-x4-PEV" secondAttribute="bottom" constant="100" id="R6K-5H-UWC"/>
-                            <constraint firstItem="h3n-qz-0mN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fiM-9k-1rr"/>
-                            <constraint firstItem="qJC-x4-PEV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="txp-CR-lmv"/>
+                            <constraint firstItem="ZLb-Hj-fbm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="8be-rj-PxA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qJC-x4-PEV" secondAttribute="trailing" constant="50" id="QJB-i8-bcy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZLb-Hj-fbm" secondAttribute="trailing" constant="50" id="cZ8-Ot-bev"/>
+                            <constraint firstItem="qJC-x4-PEV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ck7-NK-nSE"/>
+                            <constraint firstItem="qJC-x4-PEV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="gRf-LI-ADq"/>
+                            <constraint firstItem="ZLb-Hj-fbm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ibn-mk-0YG"/>
+                            <constraint firstItem="qJC-x4-PEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u2L-lE-eVF"/>
+                            <constraint firstItem="ZLb-Hj-fbm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="xb6-5l-GkX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -74,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+            <point key="canvasLocation" x="136.80000000000001" y="113.79310344827587"/>
         </scene>
         <!--Expansion View Controller-->
         <scene sceneID="6L4-K1-w1k">
