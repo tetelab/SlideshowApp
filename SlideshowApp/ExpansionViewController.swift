@@ -13,7 +13,7 @@ class ExpansionViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     //引数を受け取るための変数
-    var imageNumber = UIImage(named: "Ham1")!
+    var imageNumber = UIImage(named: "Ham1.jpg")!
 
     override func viewDidLoad() {
         

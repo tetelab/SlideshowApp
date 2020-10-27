@@ -23,9 +23,9 @@ class ViewController: UIViewController {
     
     // スライドショーさせる画像の配列を宣言
     var imageArray:[UIImage] = [
-        UIImage(named: "Ham1")!,
-        UIImage(named: "Ham2")!,
-        UIImage(named: "Ham3")!
+        UIImage(named: "Ham1.jpg")!,
+        UIImage(named: "Ham2.jpg")!,
+        UIImage(named: "Ham3.jpg")!
     ]
     
     override func viewDidLoad() {
